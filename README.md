@@ -17,10 +17,10 @@ MS COCO
 
 | Model             | Test Size | #Params | FLOPs | AP<sup>val</sup> | AP<sub>50</sub><sup>val</sup> | 
 |:------------------|:----:|:-------:|:-----:|:----------------:|:-----------------------------:|
-| MAF-YOLOv2-Lite-N |   640  |  1.4M   | 4.7G  |      38.5%       |             53.7%             |  
-| MAF-YOLOv2-N      |   640  |  2.2M   | 7.2G  |      42.3%       |             58.5%             | 
-| MAF-YOLOv2-S      |   640  |  7.1M   | 25.3G |      48.9%       |             65.9%             | 
-| MAF-YOLOv2-M      |   640  |  15.3M  | 65.2G |      52.7%       |             69.5%             | 
+| [MAF-YOLOv2-Lite-N](https://github.com/yang-0201/MAF-YOLOv2/releases/download/v1.0.0/MAF-YOLOv2-Lite-N.pt) |   640  |  1.4M   | 4.7G  |      38.5%       |             53.7%             |  
+| [MAF-YOLOv2-N](https://github.com/yang-0201/MAF-YOLOv2/releases/download/v1.0.0/MAF-YOLOv2-N.pt)      |   640  |  2.2M   | 7.2G  |      42.3%       |             58.5%             | 
+| [MAF-YOLOv2-S](https://github.com/yang-0201/MAF-YOLOv2/releases/download/v1.0.0/MAF-YOLOv2-S.pt)      |   640  |  7.1M   | 25.3G |      48.9%       |             65.9%             | 
+| [MAF-YOLOv2-M](https://github.com/yang-0201/MAF-YOLOv2/releases/download/v1.0.0/MAF-YOLOv2-M.pt)      |   640  |  15.3M  | 65.2G |      52.7%       |             69.5%             | 
 
 Segmentation (COCO)
 
