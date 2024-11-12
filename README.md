@@ -1,5 +1,5 @@
 # MAF-YOLOv2
-We have optimized and designed MAF-YOLOv2 based on the latest YOLO framework. This model achieves exceptionally high parameter efficiency and has reached state-of-the-art performance among all YOLO variants. The paper will be The paper will be released soon.
+We have optimized and designed MAF-YOLOv2 based on the latest YOLO framework. This model achieves exceptionally high parameter efficiency and has reached state-of-the-art performance among all YOLO variants. The paper will be released soon.
 
 Previous version: [MAF-YOLO](https://github.com/yang-0201/MAF-YOLO) | [Paper](https://arxiv.org/abs/2407.04381)
 ## UPDATES 🔥
