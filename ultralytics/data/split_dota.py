@@ -284,5 +284,5 @@ def split_test(data_root, save_dir, crop_size=1024, gap=200, rates=[1.0]):
 
 
 if __name__ == "__main__":
-    split_trainval(data_root="DOTAv2", save_dir="DOTAv2-split")
-    split_test(data_root="DOTAv2", save_dir="DOTAv2-split")
+    split_trainval(data_root="D:\Detection\datasets\DOTAv1", save_dir="DOTAv2-split-noms")
+    split_test(data_root="D:\Detection\datasets\DOTAv1", save_dir="DOTAv2-split-noms")
