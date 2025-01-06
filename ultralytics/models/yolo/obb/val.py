@@ -47,6 +47,7 @@ class OBBValidator(DetectionValidator):
             multi_label=True,
             agnostic=self.args.single_cls,
             max_det=self.args.max_det,
+            max_nms=1920,
             rotated=True,
         )
 

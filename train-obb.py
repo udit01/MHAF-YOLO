@@ -1,4 +1,7 @@
 from ultralytics import YOLO
 if __name__ == '__main__':
-    model = YOLO('MAF-YOLOv2-n-obb.yaml')
-    model.train(data='DOTAv1-noms.yaml', batch=12, device=0, epochs=200, mixup=0.1, scale=0.9, degrees=180, imgsz=1024)
+    # model = YOLO('MAF-YOLOv2-n-obb.yaml')
+    # model.train(data='DOTAv1-noms.yaml', batch=8, device=0, epochs=200, mixup=0.1, scale=0.9, degrees=180, flipud=0.5, imgsz=1024, workers=2, dfl=0.75)
+    #medium
+    model = YOLO('MAF-YOLOv2-m-obb.yaml').load('MAF-YOLOv2-M.pt')
+    model.train(data='DOTAv1-ms.yaml', batch=16, device=[0, 1, 2, 3], epochs=200, mixup=0.15, scale=0.9, degrees=180, flipud=0.5, imgsz=1024, workers=2, dfl=0.75)
