@@ -48,7 +48,7 @@ ImageNet
 | [MAF-YOLOv2-S-cls](https://github.com/yang-0201/MHAF-YOLO/releases/download/v1.0.0/MAF-YOLOv2-S-cls.pt)              | 224                   | 75.5             | 92.6             | 5.6                | 1.4               |
 | [MAF-YOLOv2-N-cls-finetune-384](https://github.com/yang-0201/MHAF-YOLO/releases/download/v1.0.0/MAF-YOLOv2-N-cls-finetune-384.pt) | 384                   | 73.8             | 91.8             | 2.8                | 1.3               |
 
-### Rotated Object Detectio 
+### Rotated Object Detection
 DOTA-v1.0
 TBD
 ## Installation
