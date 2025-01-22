@@ -1,5 +1,11 @@
-# MAF-YOLOv2
-We have optimized and designed MAF-YOLOv2 based on the latest YOLO framework. This model achieves exceptionally high parameter efficiency and has reached state-of-the-art performance among all YOLO variants. The paper will be released soon.
+# MHAF-YOLO
+We have optimized and designed MAF-YOLOv2(MHAF-YOLO) based on the latest YOLO framework. This model achieves exceptionally high parameter efficiency and has reached state-of-the-art performance among all YOLO variants. The paper will be released soon.
+<div align="center">
+ <a href="./">
+     <img src="./result/mhafyolo.png"/>
+</a>
+ 
+</div>
 
 Previous version: [MAF-YOLO](https://github.com/yang-0201/MAF-YOLO) | [Paper](https://arxiv.org/abs/2407.04381)
 ## UPDATES 🔥
@@ -12,27 +18,38 @@ Previous version: [MAF-YOLO](https://github.com/yang-0201/MAF-YOLO) | [Paper](ht
 </div>
 
 
-## Performance
+
+## Model Zoo
+### Detection
 MS COCO
 
-| Model             | Test Size | #Params | FLOPs | AP<sup>val</sup> | AP<sub>50</sub><sup>val</sup> | 
-|:------------------|:----:|:-------:|:-----:|:----------------:|:-----------------------------:|
-| [MAF-YOLOv2-Lite-N](https://github.com/yang-0201/MAF-YOLOv2/releases/download/v1.0.0/MAF-YOLOv2-Lite-N.pt) |   640  |  1.4M   | 4.7G  |      38.5%       |             53.7%             |  
-| YOLOv10-N     |   640  |  2.3M   | 6.7G |      38.5%       |             53.8%          |
-| [MAF-YOLOv2-N](https://github.com/yang-0201/MAF-YOLOv2/releases/download/v1.0.0/MAF-YOLOv2-N.pt)      |   640  |  2.2M   | 7.2G  |      42.3% (+3.8%)       |  58.5% (+4.8%)     | 
- | YOLOv10-S     |   640  |  7.2M   | 21.6G |      46.3%       |             63.0%         |
-| [MAF-YOLOv2-S](https://github.com/yang-0201/MAF-YOLOv2/releases/download/v1.0.0/MAF-YOLOv2-S.pt)      |   640  |  7.1M   | 25.3G |      48.9% (+2.6%)      |             65.9% (+2.9%)             | 
- | YOLOv10-M    |   640  |  15.4M   | 59.1G |      51.1%       |             68.1%         |
-| [MAF-YOLOv2-M](https://github.com/yang-0201/MAF-YOLOv2/releases/download/v1.0.0/MAF-YOLOv2-M.pt)      |   640  |  15.3M  | 65.2G |      52.7% (+1.6%)        |             69.5% (+1.4%)             | 
+| Model             | Test Size | #Params | FLOPs |     AP<sup>val</sup>     |   AP<sub>50</sub><sup>val</sup>    | 
+|:------------------|:----:|:-------:|:-----:|:------------------------:|:----------------------------------:|
+| [MAF-YOLOv2-Lite-N](https://github.com/yang-0201/MAF-YOLOv2/releases/download/v1.0.0/MAF-YOLOv2-Lite-N.pt) |   640  |  1.4M   | 4.7G  |          38.5%           |               53.7%                |  
+| [MAF-YOLOv2-N](https://github.com/yang-0201/MAF-YOLOv2/releases/download/v1.0.0/MAF-YOLOv2-N.pt)      |   640  |  2.2M   | 7.2G  |          42.3%           |               58.5%                | 
+| [MAF-YOLOv2-S](https://github.com/yang-0201/MAF-YOLOv2/releases/download/v1.0.0/MAF-YOLOv2-S.pt)      |   640  |  7.1M   | 25.3G |      48.9%      |               65.9%                | 
+| [MAF-YOLOv2-M](https://github.com/yang-0201/MAF-YOLOv2/releases/download/v1.0.0/MAF-YOLOv2-M.pt)      |   640  |  15.3M  | 65.2G |      52.7%       |               69.5%                | 
 
-Segmentation (COCO)
+### Segmentation
+COCO-seg
 
-| Model            | Test Size | #Params | FLOPs | AP<sub>bbox</sub> | AP<sub>mask</sub> | 
-|:-----------------|:----:|:-------:|:-----:|:-----------------:|:-----------------:|
-| MAF-YOLOv2-N-Seg |   640  |  2.4M   | 14.8G |       42.5%       |       35.0%       | 
-| MAF-YOLOv2-S-Seg |   640  |  7.8M   | 40.4G |       48.8%       |       39.7%       | 
+| Model                                                                                                   | Test Size | #Params | FLOPs | AP<sub>bbox</sub> | AP<sub>mask</sub> | 
+|:--------------------------------------------------------------------------------------------------------|:----:|:-------:|:-----:|:-----------------:|:-----------------:|
+| [MAF-YOLOv2-N-seg](https://github.com/yang-0201/MHAF-YOLO/releases/download/v1.0.0/MAF-YOLOv2-N-Seg.pt) |   640  |  2.4M   | 14.8G |       42.5%       |       35.0%       | 
+| [MAF-YOLOv2-S-seg](https://github.com/yang-0201/MHAF-YOLO/releases/download/v1.0.0/MAF-YOLOv2-S-Seg.pt) |   640  |  7.8M   | 40.4G |       48.8%       |       39.7%       | 
 
+### Classification 
+ImageNet
 
+| Model                                                                                                                | size<br><sup>(pixels) | acc<br><sup>top1 | acc<br><sup>top5 | params<br><sup>(M) | FLOPs<br><sup>(G) |
+|----------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|------------------|--------------------|-------------------|
+| [MAF-YOLOv2-N-cls](https://github.com/yang-0201/MHAF-YOLO/releases/download/v1.0.0/MAF-YOLOv2-N-cls.pt)              | 224                   | 71.2             | 90.3             | 2.8                | 0.4               |
+| [MAF-YOLOv2-S-cls](https://github.com/yang-0201/MHAF-YOLO/releases/download/v1.0.0/MAF-YOLOv2-S-cls.pt)              | 224                   | 75.5             | 92.6             | 5.6                | 1.4               |
+| [MAF-YOLOv2-N-cls-finetune-384](https://github.com/yang-0201/MHAF-YOLO/releases/download/v1.0.0/MAF-YOLOv2-N-cls-finetune-384.pt) | 384                   | 73.8             | 91.8             | 2.8                | 1.3               |
+
+### Rotated Object Detectio 
+DOTA-v1.0
+TBD
 ## Installation
 
 ```
@@ -57,7 +74,7 @@ if __name__ == '__main__':
 
 ## Citation
 
-If our code or model is helpful to your work, please cite our paper. We would be very grateful!
+If our code or model is helpful to your work, please cite our paper and consider giving us a star. We would be very grateful!
 ```BibTeX
 @InProceedings{10.1007/978-981-97-8858-3_34,
 author="Yang, Zhiqiang
