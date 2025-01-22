@@ -2,13 +2,14 @@
 We have optimized and designed MAF-YOLOv2(MHAF-YOLO) based on the latest YOLO framework. This model achieves exceptionally high parameter efficiency and has reached state-of-the-art performance among all YOLO variants. The paper will be released soon.
 <div align="center">
  <a href="./">
-     <img src="./result/mhafyolo.png"/>
+     <img src="./result/mhafyolo.png" width="80%"/>
 </a>
  
 </div>
 
 Previous version: [MAF-YOLO](https://github.com/yang-0201/MAF-YOLO) | [Paper](https://arxiv.org/abs/2407.04381)
 ## UPDATES 🔥
+- 2024/1/22: Add MAF-YOLOv2-cls, MAF-YOLOv2-seg
 - 2024/11/11: Add MAF-YOLOv2
 <div align="center">
     <a href="./">
