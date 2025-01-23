@@ -56,6 +56,7 @@ from ultralytics.nn.modules import (
     RepHDW,
     AVG,
     RepHMS,
+    ConvMS,
     v10ATSSDetect,
     v10Detect,
     v10Detect_aux,
@@ -908,6 +909,7 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
             C2fCIB,
             RepHDW,
             RepHMS,
+            ConvMS,
             CSPSA
         }:
             c1, c2 = ch[f], args[0]

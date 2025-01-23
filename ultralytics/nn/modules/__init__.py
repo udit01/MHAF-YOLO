@@ -58,6 +58,7 @@ from .mafyolo import (
     RepHDW,
     AVG,
     RepHMS,
+    ConvMS,
     UniRepLKNetBlock,
 
 )
