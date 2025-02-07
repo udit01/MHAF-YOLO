@@ -81,7 +81,14 @@ if __name__ == '__main__':
     model.train(data='coco.yaml', batch=16, device=0)
 
 ```
-
+## Problems and Improvements
+<details><summary>Problems</summary>
+<details><summary>Multi-GPU distributed training</summary>
+One of the issues with the YOLOv10 framework is that during multi-GPU training, there is a certain probability that the program cannot be completely stopped, requiring manual intervention to kill the process.
+</details>
+<details><summary>Failed to load some pretrained weights.</summary>
+ </details>
+</details>
 
 ## Citation
 
