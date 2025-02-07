@@ -10,7 +10,8 @@ We have optimized and designed MAF-YOLOv2(MHAF-YOLO) based on the latest YOLO fr
 </div>
 
 ## UPDATES 🔥
-- 2024/1/22: Add MAF-YOLOv2-cls, MAF-YOLOv2-seg
+- 2025/2/7: Add Paper
+- 2025/1/22: Add MAF-YOLOv2-cls, MAF-YOLOv2-seg
 - 2024/11/11: Add MAF-YOLOv2
 <div align="center">
     <a href="./">
