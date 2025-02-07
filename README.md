@@ -37,8 +37,8 @@ MS COCO with ImageNet Pretrain
 
 | Model             | Test Size | #Params | FLOPs |     AP<sup>val</sup>     |   AP<sub>50</sub><sup>val</sup>    | 
 |:------------------|:----:|:-------:|:-----:|:------------------------:|:----------------------------------:|
-| [MAF-YOLOv2-N-pretrain](https://github.com/yang-0201/MAF-YOLOv2/releases/download/v1.0.0/MAF-YOLOv2-N-pretrain.pt)      |   640  |  2.2M   | 7.2G  |          43.1%           |               59.3%                | 
-| [MAF-YOLOv2-S-pretrain](https://github.com/yang-0201/MAF-YOLOv2/releases/download/v1.0.0/MAF-YOLOv2-S-pretrain.pt)      |   640  |  7.1M   | 25.3G |      49.4%      |               66.5%                | 
+| [MAF-YOLOv2-N-pretrained](https://github.com/yang-0201/MAF-YOLOv2/releases/download/v1.0.0/MAF-YOLOv2-N-pretrained.pt)      |   640  |  2.2M   | 7.2G  |          43.1%           |               59.3%                | 
+| [MAF-YOLOv2-S-pretrained](https://github.com/yang-0201/MAF-YOLOv2/releases/download/v1.0.0/MAF-YOLOv2-S-pretrained.pt)      |   640  |  7.1M   | 25.3G |      49.4%      |               66.5%                | 
 
 
 ### Segmentation
