@@ -84,13 +84,21 @@ if __name__ == '__main__':
 ```
 ## Problems and Improvements
 <details><summary>Problems</summary>
-<details><summary>Multi-GPU distributed training</summary>
+<details><summary>1. Multi-GPU distributed training</summary>
 One of the issues with the YOLOv10 framework is that during multi-GPU training, there is a certain probability that the program cannot be completely stopped, requiring manual intervention to kill the process.
 </details>
-<details><summary>Failed to load some pretrained weights.</summary>
+<details><summary>2. Failed to load some pretrained weights.</summary>
  </details>
 </details>
 
+<details><summary>Improvements</summary>
+<details><summary>1. Try to replace nms free</summary>
+ MHAF-YOLO, like YOLOv10, uses a one-to-one head by default to achieve an NMS-free effect. However, in some smaller models or smaller datasets, using NMS combined with a one-to-many head can lead to significant improvements. For example, on the COCO dataset, the nano model shows a 1% improvement, and on private smaller-scale datasets, it can even reach over 2%. If your model isn’t concerned about the speed overhead of NMS, you can make the following modification to see the accuracy improvement:
+
+Edit the file ultralytics/models/yolov10/val.py and uncomment lines 11 to 19.
+  </details>
+ </details>
+ 
 ## Citation
 
 If our code or model is helpful to your work, please cite our paper and consider giving us a star. We would be very grateful!
