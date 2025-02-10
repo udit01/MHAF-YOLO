@@ -1,6 +1,7 @@
 # MHAF-YOLO
 We have optimized and designed MAF-YOLOv2(MHAF-YOLO) based on the latest YOLO framework. This model achieves exceptionally high parameter efficiency and has reached state-of-the-art performance among all YOLO variants.
 
+最新论文为：[MHAF-YOLO: Multi-Branch Heterogeneous Auxiliary Fusion YOLO for accurate object detection](https://arxiv.org/abs/2502.04656) 
 <div align="center">
  <a href="./">
      <img src="./result/mhafyolo.png" width="80%"/>
