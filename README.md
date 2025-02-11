@@ -26,12 +26,12 @@ We have optimized and designed MAF-YOLOv2(MHAF-YOLO) based on the latest YOLO fr
 ### Detection
 MS COCO
 
-| Model             | Test Size | #Params | FLOPs |     AP<sup>val</sup>     |   AP<sub>50</sub><sup>val</sup>    | 
-|:------------------|:----:|:-------:|:-----:|:------------------------:|:----------------------------------:|
-| [MAF-YOLOv2-Lite-N](https://github.com/yang-0201/MAF-YOLOv2/releases/download/v1.0.0/MAF-YOLOv2-Lite-N.pt) |   640  |  1.4M   | 4.7G  |          38.5%           |               53.7%                |  
-| [MAF-YOLOv2-N](https://github.com/yang-0201/MAF-YOLOv2/releases/download/v1.0.0/MAF-YOLOv2-N.pt)      |   640  |  2.2M   | 7.2G  |          42.3%           |               58.5%                | 
-| [MAF-YOLOv2-S](https://github.com/yang-0201/MAF-YOLOv2/releases/download/v1.0.0/MAF-YOLOv2-S.pt)      |   640  |  7.1M   | 25.3G |      48.9%      |               65.9%                | 
-| [MAF-YOLOv2-M](https://github.com/yang-0201/MAF-YOLOv2/releases/download/v1.0.0/MAF-YOLOv2-M.pt)      |   640  |  15.3M  | 65.2G |      52.7%       |               69.5%                | 
+| Model             | Test Size | #Params | FLOPs |     AP<sup>val</sup>     |   AP<sub>50</sub><sup>val</sup>    | Latency|
+|:------------------|:----:|:-------:|:-----:|:------------------------:|:----------------------------------:|:----------------------------------:|
+| [MAF-YOLOv2-Lite-N](https://github.com/yang-0201/MAF-YOLOv2/releases/download/v1.0.0/MAF-YOLOv2-Lite-N.pt) |   640  |  1.4M   | 4.7G  |          38.5%            |      53.7%                |        1.11ms 
+| [MAF-YOLOv2-N](https://github.com/yang-0201/MAF-YOLOv2/releases/download/v1.0.0/MAF-YOLOv2-N.pt)      |   640  |  2.2M   | 7.2G  |          42.3%           |               58.5%   |1.28ms                   | 
+| [MAF-YOLOv2-S](https://github.com/yang-0201/MAF-YOLOv2/releases/download/v1.0.0/MAF-YOLOv2-S.pt)      |   640  |  7.1M   | 25.3G |      48.9%      |               65.9%    |     1.67ms    |             | 
+| [MAF-YOLOv2-M](https://github.com/yang-0201/MAF-YOLOv2/releases/download/v1.0.0/MAF-YOLOv2-M.pt)      |   640  |  15.3M  | 65.2G |      52.7%       |               69.5%                |      2.79ms   | 
 
 MS COCO with ImageNet Pretrain
 
@@ -81,6 +81,32 @@ if __name__ == '__main__':
     model = YOLOv10('MAF-YOLOv2-n.yaml')
     model.train(data='coco.yaml', batch=16, device=0)
 
+```
+## Val
+```python
+# val.py
+from ultralytics import YOLOv10
+if __name__ == '__main__':
+    model = YOLOv10('MAF-YOLOv2-N.pt')
+    model.val(data='coco.yaml', device=0,split='val', save_json=True, batch=8)
+
+```
+## Export
+End-to-End ONNX
+```python
+yolo export model=MAF-YOLOv2-N.pt format=onnx opset=13 simplify
+```
+End-to-End TensorRT
+```python
+yolo export model=MAF-YOLOv2-N.pt format=engine half=True simplify opset=13 workspace=16
+```
+or 
+```python
+trtexec --onnx=MAF-YOLOv2-N.onnx --saveEngine=MAF-YOLOv2-N.engine --fp16
+```
+Evaluation speed
+```python
+trtexec --loadEngine=MAF-YOLOv2-N.engine --fp16
 ```
 ## Problems and Improvements
 <details><summary>Problems</summary>
