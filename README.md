@@ -4,7 +4,7 @@ We have optimized and designed MAF-YOLOv2(MHAF-YOLO) based on the latest YOLO fr
 最新论文为：[MHAF-YOLO: Multi-Branch Heterogeneous Auxiliary Fusion YOLO for accurate object detection](https://arxiv.org/abs/2502.04656) 
 <div align="center">
  <a href="./">
-     <img src="./result/mhafyolo.png" width="80%"/>
+     <img src="https://github.com/user-attachments/assets/aced26b3-e4a1-4288-a68b-4c2b3b86c5e2" width="80%"/>
 </a>
  
 </div>
@@ -15,8 +15,8 @@ We have optimized and designed MAF-YOLOv2(MHAF-YOLO) based on the latest YOLO fr
 - 2024/11/11: Add MAF-YOLOv2
 <div align="center">
     <a href="./">
-        <img src="./result/MAF-YOLOv2.png" width="40%"/>
-        <img src="./result/MAF-YOLOv2-G.png" width="40%"/>
+        <img src="https://github.com/user-attachments/assets/075bd591-4851-424d-a627-535a938e88e7" width="40%"/>
+        <img src="https://github.com/user-attachments/assets/b3623f16-d99e-4803-b65d-cd7069b3dd62" width="40%"/>
     </a>
 </div>
 
