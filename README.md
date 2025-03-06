@@ -62,6 +62,16 @@ ImageNet
 ### Rotated Object Detection
 DOTA-v1.0
 TBD
+
+### Others
+| Model             | Test Size | #Params | FLOPs |     AP<sup>val</sup>     |   AP<sub>50</sub><sup>val</sup>    | AP<sub>s</sub><sup>val</sup>    | AP<sub>m</sub><sup>val</sup>    | AP<sub>l</sub><sup>val</sup>    | Epochs|
+|:------------------|:----:|:-------:|:-----:|:------------------------:|:----------------------------------:|:----------------------------------:|:----------------------------------:|:----------------------------------:|:----------------------------------:|
+| YOLOv12n |   640  |  2.6M   | 6.5G  |          40.6%            |      56.7%            | 20.2%|45.2% |  58.4%   |        600
+| [YOLOv12n + MAFPN](https://github.com/yang-0201/MAF-YOLOv2/releases/download/v1.0.0/YOLOv12n_MAFPN.pt)      |   640  |  2.6M   | 8.8G  |          41.6%(+1.0)           |               57.7%(+1.0)   | 22.0%(+1.8) |45.7%(+0.5) | 58.5%(+0.1) |500(-100)                  | 
+
+Directly replace the PAFPN in YOLOv12n with MAFPN.   [YOLOv12n_MAFPN.yaml]()
+
+
 ## Installation
 
 ```
