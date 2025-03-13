@@ -53,7 +53,7 @@ COCO-seg
 ImageNet
 
 | Model                                                                                                                | size<br><sup>(pixels) | acc<br><sup>top1 | acc<br><sup>top5 | params<br><sup>(M) | FLOPs<br><sup>(G) |
-|----------------------------------------------------------------------------------------------------------------------|-----------------------|------------------|------------------|--------------------|-------------------|
+|:----------------------------------------------------------------------------------------------------------------------:|:-----------------------:|:------------------:|:------------------:|:--------------------:|:-------------------:|
 | [MAF-YOLOv2-N-cls](https://github.com/yang-0201/MHAF-YOLO/releases/download/v1.0.0/MAF-YOLOv2-N-cls.pt)              | 224                   | 71.2             | 90.3             | 2.8                | 0.4               |
 | [MAF-YOLOv2-S-cls](https://github.com/yang-0201/MHAF-YOLO/releases/download/v1.0.0/MAF-YOLOv2-S-cls.pt)              | 224                   | 75.5             | 92.6             | 5.6                | 1.4               |
 | [MAF-YOLOv2-N-cls-finetune-384](https://github.com/yang-0201/MHAF-YOLO/releases/download/v1.0.0/MAF-YOLOv2-N-cls-finetune-384.pt) | 384                   | 73.8             | 91.8             | 2.8                | 1.3               |
@@ -61,7 +61,11 @@ ImageNet
 
 ### Rotated Object Detection
 DOTA-v1.0
-TBD
+
+| Model                                                                                                   | size<br><sup>(pixels) | MS   | Pretrain | params<br><sup>(M) | FLOPs<br><sup>(G) | mAP  |
+|:---------------------------------------------------------------------------------------------------------:|:-----------------------:|:----------:|:----------:|:--------------------:|:-------------------:|:------:|
+| [MAF-YOLOv2-S-obb](https://github.com/yang-0201/MHAF-YOLO/releases/download/v1.0.0/MAF-YOLOv2-S-obb.pt) | 1024                  | ✔| ✘    | 7.3                | 67.3              | 81.1 |
+
 
 ### Others
 | Model             | Test Size | #Params | FLOPs |     AP<sup>val</sup>     |   AP<sub>50</sub><sup>val</sup>    | AP<sub>s</sub><sup>val</sup>    | AP<sub>m</sub><sup>val</sup>    | AP<sub>l</sub><sup>val</sup>    | Epochs|
