@@ -99,7 +99,6 @@ from ultralytics import YOLOv10
 if __name__ == '__main__':
     model = YOLOv10('MAF-YOLOv2-N.pt')
     model.val(data='coco.yaml', device=0,split='val', save_json=True, batch=8)
-
 ```
 ## Export
 End-to-End ONNX
