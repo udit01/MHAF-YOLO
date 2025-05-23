@@ -1,4 +1,4 @@
-from ultralytics import YOLOv10
+from ultralytics_mhaf import YOLOv10
 
 if __name__ == '__main__':
     model = YOLOv10('MAF-YOLOv10-n.pt')

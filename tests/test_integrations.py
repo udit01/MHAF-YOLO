@@ -1,13 +1,13 @@
-# Ultralytics YOLO 🚀, AGPL-3.0 license
+# ultralytics_mhaf YOLO 🚀, AGPL-3.0 license
 
 import contextlib
 from pathlib import Path
 
 import pytest
 
-from ultralytics import YOLO, download
-from ultralytics.utils import ASSETS, DATASETS_DIR, ROOT, SETTINGS, WEIGHTS_DIR
-from ultralytics.utils.checks import check_requirements
+from ultralytics_mhaf import YOLO, download
+from ultralytics_mhaf.utils import ASSETS, DATASETS_DIR, ROOT, SETTINGS, WEIGHTS_DIR
+from ultralytics_mhaf.utils.checks import check_requirements
 
 MODEL = WEIGHTS_DIR / "path with spaces" / "yolov8n.pt"  # test spaces in path
 CFG = "yolov8n.yaml"
@@ -30,7 +30,7 @@ def test_mlflow():
     YOLO("yolov8n-cls.yaml").train(data="imagenet10", imgsz=32, epochs=3, plots=False, device="cpu")
 
 
-@pytest.mark.skipif(True, reason="Test failing in scheduled CI https://github.com/ultralytics/ultralytics/pull/8868")
+@pytest.mark.skipif(True, reason="Test failing in scheduled CI https://github.com/ultralytics_mhaf/ultralytics_mhaf/pull/8868")
 @pytest.mark.skipif(not check_requirements("mlflow", install=False), reason="mlflow not installed")
 def test_mlflow_keep_run_active():
     import os
@@ -120,12 +120,12 @@ def test_triton():
 @pytest.mark.skipif(not check_requirements("pycocotools", install=False), reason="pycocotools not installed")
 def test_pycocotools():
     """Validate model predictions using pycocotools."""
-    from ultralytics.models.yolo.detect import DetectionValidator
-    from ultralytics.models.yolo.pose import PoseValidator
-    from ultralytics.models.yolo.segment import SegmentationValidator
+    from ultralytics_mhaf.models.yolo.detect import DetectionValidator
+    from ultralytics_mhaf.models.yolo.pose import PoseValidator
+    from ultralytics_mhaf.models.yolo.segment import SegmentationValidator
 
     # Download annotations after each dataset downloads first
-    url = "https://github.com/ultralytics/assets/releases/download/v8.1.0/"
+    url = "https://github.com/ultralytics_mhaf/assets/releases/download/v8.1.0/"
 
     args = {"model": "yolov8n.pt", "data": "coco8.yaml", "save_json": True, "imgsz": 64}
     validator = DetectionValidator(args=args)

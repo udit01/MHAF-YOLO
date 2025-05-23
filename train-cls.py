@@ -1,4 +1,4 @@
-from ultralytics import YOLO
+from ultralytics_mhaf import YOLO
 if __name__ == '__main__':
     model = YOLO('MAF-YOLOv2-n-cls.yaml')
     model.train(data='../datasets/imagenet', batch=256, device=0, epochs=300, scale=0.5, imgsz=224, workers=8,

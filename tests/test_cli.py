@@ -1,10 +1,10 @@
-# Ultralytics YOLO 🚀, AGPL-3.0 license
+# ultralytics_mhaf YOLO 🚀, AGPL-3.0 license
 
 import subprocess
 
 import pytest
 
-from ultralytics.utils import ASSETS, WEIGHTS_DIR, checks
+from ultralytics_mhaf.utils import ASSETS, WEIGHTS_DIR, checks
 
 CUDA_IS_AVAILABLE = checks.cuda_is_available()
 CUDA_DEVICE_COUNT = checks.cuda_device_count()
@@ -63,7 +63,7 @@ def test_export(model, format):
 
 
 def test_rtdetr(task="detect", model="yolov8n-rtdetr.yaml", data="coco8.yaml"):
-    """Test the RTDETR functionality with the Ultralytics framework."""
+    """Test the RTDETR functionality with the ultralytics_mhaf framework."""
     # Warning: MUST use imgsz=640
     run(f"yolo train {task} model={model} data={data} --imgsz= 160 epochs =1, cache = disk")  # add coma, spaces to args
     run(f"yolo predict {task} model={model} source={ASSETS / 'bus.jpg'} imgsz=160 save save_crop save_txt")
@@ -71,15 +71,15 @@ def test_rtdetr(task="detect", model="yolov8n-rtdetr.yaml", data="coco8.yaml"):
 
 @pytest.mark.skipif(checks.IS_PYTHON_3_12, reason="MobileSAM with CLIP is not supported in Python 3.12")
 def test_fastsam(task="segment", model=WEIGHTS_DIR / "FastSAM-s.pt", data="coco8-seg.yaml"):
-    """Test FastSAM segmentation functionality within Ultralytics."""
+    """Test FastSAM segmentation functionality within ultralytics_mhaf."""
     source = ASSETS / "bus.jpg"
 
     run(f"yolo segment val {task} model={model} data={data} imgsz=32")
     run(f"yolo segment predict model={model} source={source} imgsz=32 save save_crop save_txt")
 
-    from ultralytics import FastSAM
-    from ultralytics.models.fastsam import FastSAMPrompt
-    from ultralytics.models.sam import Predictor
+    from ultralytics_mhaf import FastSAM
+    from ultralytics_mhaf.models.fastsam import FastSAMPrompt
+    from ultralytics_mhaf.models.sam import Predictor
 
     # Create a FastSAM model
     sam_model = FastSAM(model)  # or FastSAM-x.pt
@@ -108,8 +108,8 @@ def test_fastsam(task="segment", model=WEIGHTS_DIR / "FastSAM-s.pt", data="coco8
 
 
 def test_mobilesam():
-    """Test MobileSAM segmentation functionality using Ultralytics."""
-    from ultralytics import SAM
+    """Test MobileSAM segmentation functionality using ultralytics_mhaf."""
+    from ultralytics_mhaf import SAM
 
     # Load the model
     model = SAM(WEIGHTS_DIR / "mobile_sam.pt")

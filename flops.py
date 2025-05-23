@@ -1,4 +1,4 @@
-from ultralytics import YOLOv10
+from ultralytics_mhaf import YOLOv10
 
 model = YOLOv10('MAF-YOLOv2-n.yaml')
 model.model.model[-1].export = True

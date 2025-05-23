@@ -73,7 +73,7 @@ DOTA-v1.0
 | YOLOv12n |   640  |  2.6M   | 6.5G  |          40.6%            |      56.7%            | 20.2%|45.2% |  58.4%   |        600
 | [YOLOv12n + MAFPN](https://github.com/yang-0201/MAF-YOLOv2/releases/download/v1.0.0/YOLOv12n_MAFPN.pt)      |   640  |  2.6M   | 8.8G  |          41.6%(+1.0)           |               57.7%(+1.0)   | 22.0%(+1.8) |45.7%(+0.5) | 58.5%(+0.1) |500(-100)                  | 
 
-Directly replace the PAFPN in YOLOv12n with MAFPN.   [yolov12n-MAFPN](ultralytics/cfg/models/v12/yolov12n-MAFPN.yaml)
+Directly replace the PAFPN in YOLOv12n with MAFPN.   [yolov12n-MAFPN](ultralytics_mhaf/cfg/models/v12/yolov12n-MAFPN.yaml)
 
 
 ## Installation
@@ -90,7 +90,7 @@ pip install -e .
 Single GPU training
 ```python
 # train.py
-from ultralytics import YOLOv10
+from ultralytics_mhaf import YOLOv10
 if __name__ == '__main__':
     model = YOLOv10('MAF-YOLOv2-n.yaml')
     model.train(data='coco.yaml', batch=16, device=0)
@@ -99,7 +99,7 @@ if __name__ == '__main__':
 ## Val
 ```python
 # val.py
-from ultralytics import YOLOv10
+from ultralytics_mhaf import YOLOv10
 if __name__ == '__main__':
     model = YOLOv10('MAF-YOLOv2-N.pt')
     model.val(data='coco.yaml', device=0,split='val', save_json=True, batch=8)
@@ -134,7 +134,7 @@ One of the issues with the YOLOv10 framework is that during multi-GPU training, 
 <details><summary>1. Try to replace nms free</summary>
  MHAF-YOLO, like YOLOv10, uses a one-to-one head by default to achieve an NMS-free effect. However, in some smaller models or smaller datasets, using NMS combined with a one-to-many head can lead to significant improvements. For example, on the COCO dataset, the nano model shows a 1% improvement, and on private smaller-scale datasets, it can even reach over 2%. If your model isn’t concerned about the speed overhead of NMS, you can make the following modification to see the accuracy improvement:
 
-Edit the file ultralytics/models/yolov10/val.py and uncomment lines 11 to 19.
+Edit the file ultralytics_mhaf/models/yolov10/val.py and uncomment lines 11 to 19.
   </details>
  </details>
  
@@ -153,5 +153,5 @@ If our code or model is helpful to your work, please cite our paper and consider
 
 ## Acknowledgements
 * [https://github.com/THU-MIG/yolov10](https://github.com/THU-MIG/yolov10)
-* [https://github.com/ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
+* [https://github.com/ultralytics_mhaf/ultralytics_mhaf](https://github.com/ultralytics_mhaf/ultralytics_mhaf)
 
